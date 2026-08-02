@@ -61,7 +61,7 @@ bool recieve(int sock,struct state* fill,bool PlayerToFill=false)//fill the pass
 }
 
 
-void printThisBullshit(const struct state& re)
+void PrintArr(const struct state& re)
 {
     
     std::cout << "\033[2J\033[1;1H";
@@ -78,13 +78,13 @@ void printThisBullshit(const struct state& re)
 
 
 
-void mkcISchutiyapaKaProjectKi(int sock,struct state* fill,bool PlayerToFill=false)
+void ForceRecv(int sock,struct state* fill,bool PlayerToFill=false)
 {
-    printThisBullshit(*fill);
+    PrintArr(*fill);
     struct state newstate =*fill;
     while(recieve(sock,&newstate))
     if(memcmp(&newstate,fill,sizeof(*fill)) ==0 ) continue;
-    else {printThisBullshit(newstate);
+    else {PrintArr(newstate);
           *fill=newstate;
          }
 }
@@ -103,7 +103,7 @@ int main(int argc,char* argv[])
 
     if(connect(Sock,(sockaddr*)&fuckthis,sizeof(fuckthis))==-1)
     {
-        perror("Connect ki mkc");
+        perror("Connect Failed");
         exit(-1);
     }else cout<<"Connected To server"<<endl;
 
@@ -112,7 +112,7 @@ int main(int argc,char* argv[])
 
   
 
-    thread worker1(mkcISchutiyapaKaProjectKi,Sock,&currState,false);
+    thread worker1(ForceRecv,Sock,&currState,false);
    int input;
     while(1){
       

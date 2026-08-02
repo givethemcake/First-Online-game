@@ -22,7 +22,7 @@ void Game::sendPlayerBooleans(int Player1,int Player2)
         }
         else if(sent==0)
         {
-            perror("Client ki mkc");
+            perror("Client Failed");
         }
 
         amPlayer1=false;
@@ -35,7 +35,7 @@ void Game::sendPlayerBooleans(int Player1,int Player2)
         }
         else if(sent==0)
         {
-            perror("Client ki mkc");
+            perror("Client Failed");
         }
 }
 
@@ -220,7 +220,7 @@ bool Game::processTurn(char input, bool iAmPlayer1)
     gameArr[Player1Pos.y][Player1Pos.x] = '@';
     gameArr[Player2Pos.y][Player2Pos.x] = '%';
 
-    std::cout<<"\n CHANGE STATE YOU MOTHERFUCKER\n"<<std::endl;
+    std::cout<<"\n CHANGE STATE \n"<<std::endl;
 
     return true;
 }
