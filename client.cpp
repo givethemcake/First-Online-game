@@ -93,7 +93,7 @@ void ForceRecv(int sock,struct state* fill,bool PlayerToFill=false)
 int main(int argc,char* argv[])
 {
 
-    if(argc==1){perror("Enter a god dammed ipv4 address you fucktard");exit(-1);}
+    if(argc==1){perror("Enter an ipv4 addr (hint: 0.0.0.0) ");exit(-1);}
 
     int Sock=socket(AF_INET,SOCK_STREAM,0);
     struct sockaddr_in fuckthis;
