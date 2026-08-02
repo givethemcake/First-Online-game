@@ -17,7 +17,7 @@ Check the address at which the server is listening (written and flushed to stand
 Pass the address at which the server is actually listening to your client as a command line argument instead of 0.0.0.0 <br>
 Start two instances of the client to start the game. <br>
 
-# Local Execution (same machine different network)
+# Local Execution (Over a LAN)
 
 Grab the local ipv4 address of the machine hosting the server. <br>
 Start up the server on the host machine. <br>
